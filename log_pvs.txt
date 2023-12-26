@@ -1,0 +1,49 @@
+Cycle No       No of Flits    Router No           Stage               Flit                                    Type           
+------------------------------------------------------------------------------------------------------------------------
+0              1              3                   localbuffer         00000000000100100000000000000100        header         flit injected to local PEdelay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+1              2              3                   SA                  00000000000100100000000000000100        header          delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+1              2              3                   localbuffer         00000000000100100000000000000101        tail           flit injected to local PEdelayed by 1 cause : congestiondelay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+2              3              3                   XBAR                00000000000100100000000000000100        header          extra cycle needed:more delay than cycle time
+2              3              3                   SA                  00000000000100100000000000000101        tail            delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+2              3              3                   localbuffer         00000000000100100000000000000110        body           flit injected to local PEdelayed by 2 cause : congestiondelay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+3              3              3                   XBAR                00000000000100100000000000000100        header          extra cycle needed:more delay than cycle time extra cycle
+3              3              3                   XBAR                00000000000100100000000000000101        tail            extra cycle needed:more delay than cycle time
+3              3              3                   SA                  00000000000100100000000000000110        body            delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+4              3              2                   eastbuffer          00000000000100100000000000000100        header         delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+4              3              3                   XBAR                00000000000100100000000000000101        tail            extra cycle needed:more delay than cycle time extra cycle
+4              3              3                   XBAR                00000000000100100000000000000110        body            extra cycle needed:more delay than cycle time
+5              3              2                   SA                  00000000000100100000000000000100        header         delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+5              3              2                   eastbuffer          00000000000100100000000000000101        tail           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+5              3              3                   XBAR                00000000000100100000000000000110        body            extra cycle needed:more delay than cycle time extra cycle
+6              3              2                   XBAR                00000000000100100000000000000100        header          extra cycle needed:more delay than cycle time
+6              3              2                   SA                  00000000000100100000000000000101        tail           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+6              3              2                   eastbuffer          00000000000100100000000000000110        body           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+7              3              2                   XBAR                00000000000100100000000000000100        header          extra cycle needed:more delay than cycle time extra cycle
+7              3              2                   XBAR                00000000000100100000000000000101        tail            extra cycle needed:more delay than cycle time
+7              3              2                   SA                  00000000000100100000000000000110        body           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+8              3              5                   northbuffer         00000000000100100000000000000100        header         delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+8              3              2                   XBAR                00000000000100100000000000000101        tail            extra cycle needed:more delay than cycle time extra cycle
+8              3              2                   XBAR                00000000000100100000000000000110        body            extra cycle needed:more delay than cycle time
+9              3              5                   SA                  00000000000100100000000000000100        header         delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+9              3              5                   northbuffer         00000000000100100000000000000101        tail           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+9              3              2                   XBAR                00000000000100100000000000000110        body            extra cycle needed:more delay than cycle time extra cycle
+10             3              5                   XBAR                00000000000100100000000000000100        header          delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+10             3              5                   SA                  00000000000100100000000000000101        tail           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+10             3              5                   northbuffer         00000000000100100000000000000110        body           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+11             3              8                   northbuffer         00000000000100100000000000000100        header         delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+11             3              5                   XBAR                00000000000100100000000000000101        tail            delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+11             3              5                   SA                  00000000000100100000000000000110        body           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+12             3              8                   SA                  00000000000100100000000000000100        header                        
+12             3              8                   northbuffer         00000000000100100000000000000101        tail           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+12             3              5                   XBAR                00000000000100100000000000000110        body            delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+13             3              8                   XBAR                00000000000100100000000000000100        header         flit removed to local PE
+13             3              8                   SA                  00000000000100100000000000000101        tail                          
+13             3              8                   northbuffer         00000000000100100000000000000110        body           delay is less than cycle so it will wait in the wait buffer and wait fo next cycle
+14             2              8                   XBAR                00000000000100100000000000000101        tail           flit removed to local PE
+14             2              8                   SA                  00000000000100100000000000000110        body                          
+15             1              8                   XBAR                00000000000100100000000000000110        body           flit removed to local PE
+------------------------------------------------------------------------------------------------------------------------
+Paths:
+Path: 3 -> west2 -> south5 -> south8 source: 3 destination: 8 flit: 0b00000000000100100000000000000100
+Path: 3 -> west2 -> south5 -> south8 source: 3 destination: 8 flit: 0b00000000000100100000000000000101
+Path: 3 -> west2 -> south5 -> south8 source: 3 destination: 8 flit: 0b00000000000100100000000000000110
